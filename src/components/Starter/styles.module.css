@@ -1,0 +1,9 @@
+.starterContainer {
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    border: 1px solid;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.87);
+}

@@ -1,0 +1,10 @@
+.progressbarContainer {
+    width: 606px;
+    background-color: grey;
+}
+
+.progressbar {
+    width: 0%;
+    height: 5px;
+    background-color: green;
+}

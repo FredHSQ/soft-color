@@ -1,0 +1,12 @@
+.historyList {
+    width: 420px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.buttonContainers {
+    width: 420px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

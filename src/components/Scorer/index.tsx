@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css"
+import { ScorerFunctions } from "./functions";
 
 interface ScorerProps {
     currentScore: number;
@@ -11,17 +12,16 @@ export const Scorer = ({ currentScore, start, setCurrentScore }: ScorerProps) =>
 
     const [highScore, setHighScore] = useState<number>(localStorage.getItem("highScore") ? Number(localStorage.getItem("highScore")) : 0)
 
-    useEffect(() => {
-        adjustScores();
-    }, [start])
+    const { updateScores } = ScorerFunctions({
+        currentScore,
+        highScore,
+        setCurrentScore,
+        setHighScore
+    });
 
-    function adjustScores(){
-        if(currentScore > highScore) {
-            localStorage.setItem("highScore", currentScore.toString());
-            setHighScore(currentScore);
-        } 
-        setCurrentScore(0);
-    }
+    useEffect(() => {
+        updateScores();
+    }, [start])
 
     return <div className={styles.scoreContainer}>
         <p>

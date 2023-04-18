@@ -6,11 +6,11 @@ interface ProgressBarProps {
     start: boolean;
     currentScore: number;
     setCurrentScore: React.Dispatch<React.SetStateAction<number>>;
+    totalTime: number;
+    setTotalTime: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ProgressBar = ({ start, setCurrentScore, currentScore }: ProgressBarProps) => {
-
-    const [totalTime, setTotalTime] = useState<number>(10);
+export const ProgressBar = ({ start, setCurrentScore, currentScore, setTotalTime, totalTime }: ProgressBarProps) => {
 
     const { countdownProgressBar, restartProgressBar } = ProgressBarFunctions({
         setTotalTime,

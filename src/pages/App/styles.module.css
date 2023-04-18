@@ -7,7 +7,7 @@
 .GamePage {
   display: flex;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .header {
@@ -23,16 +23,5 @@
   width: 600px;
 }
 
-.history{
-  width: 400px;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.historyList {
-  width: 400px;
-}
 

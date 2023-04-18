@@ -6,7 +6,6 @@ interface ProgressBarFunctionsProps {
     setCurrentScore: React.Dispatch<React.SetStateAction<number>>;
 }
 
-
 export const ProgressBarFunctions = ({
     setTotalTime,
     totalTime,

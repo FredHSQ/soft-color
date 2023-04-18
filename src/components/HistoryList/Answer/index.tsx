@@ -1,14 +1,14 @@
-import { AnswerType } from '../../../@types/answer';
 import styles from './styles.module.css';
+import { AnswerType } from '../../../@types/answer';
 import right from '../../../assets/right.svg';
 import wrong from '../../../assets/wrong.svg';
-
 
 interface AnswerProps {
     answer: AnswerType
 }
 
 export const Answer = ({ answer }: AnswerProps) => {
+    
     return answer.rightAnswer !== answer.yourAnswer ?
         <div className={styles.history}>
             <div className={styles.card}>

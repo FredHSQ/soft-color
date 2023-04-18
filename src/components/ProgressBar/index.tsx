@@ -25,7 +25,7 @@ export const ProgressBar = ({ start, setCurrentScore, currentScore, setTotalTime
 
     useEffect(() => {
         restartProgressBar(true);
-    }, [currentScore])
+    }, [currentScore]);
 
     return <div className={styles.progressbarContainer}>
         <div className={styles.progressbar} style={{ width: `${(totalTime - 1) * 10}%` }} />

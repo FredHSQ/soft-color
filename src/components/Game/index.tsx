@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ProgressBar } from "../ProgressBar";
 import styles from './styles.module.css';
 import { GameFunctions } from "./functions";
+import { ProgressBar } from "../ProgressBar";
 import { AnswerType } from "../../@types/answer";
 
 interface GameProps {
@@ -17,7 +17,6 @@ export const Game = ({ currentScore, start, setCurrentScore, setAnswerArray }: G
     const [colorArray, setColorArray] = useState<string[]>([]);
     const [totalTime, setTotalTime] = useState<number>(10);
 
-
     const { createOptions, verifyAnswer } = GameFunctions({
         rightColor,
         setColorArray,
@@ -32,7 +31,13 @@ export const Game = ({ currentScore, start, setCurrentScore, setAnswerArray }: G
     }, [start, currentScore])
 
     return <>
-        <ProgressBar setTotalTime={setTotalTime} totalTime={totalTime} currentScore={currentScore} start={start} setCurrentScore={setCurrentScore} />
+        <ProgressBar
+            setTotalTime={setTotalTime}
+            totalTime={totalTime}
+            currentScore={currentScore}
+            start={start}
+            setCurrentScore={setCurrentScore}
+        />
         <div className={styles.currentColor} style={{ backgroundColor: rightColor }} />
         <div className={styles.options}>
             {colorArray.map(color => {

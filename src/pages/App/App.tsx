@@ -6,6 +6,7 @@ import { Starter } from '../../components/Starter';
 import { Game } from '../../components/Game';
 import { AnswerType } from '../../@types/answer';
 import { HistoryList } from '../../components/HistoryList';
+import { DataReseter } from '../../components/DataReseter';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Game currentScore={currentScore} setAnswerArray={setAnswerArray} setCurrentScore={setCurrentScore} start={start} />
         }
       </div>
+      <DataReseter />
     </div >
   )
 }

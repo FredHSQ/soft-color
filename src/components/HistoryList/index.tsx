@@ -12,14 +12,14 @@ interface HistoryListProps {
 
 export const HistoryList = ({ answerArray, start, setAnswerArray }: HistoryListProps) => {
 
-    const [previousGame, setPreviousGame] = useState<AnswerType[]>(localStorage.getItem("previousGame") !== null ? JSON.parse(localStorage.getItem("previousGame")!) : [])
+    const [previousGame, setPreviousGame] = useState<AnswerType[]>(localStorage.getItem("previousGame") !== null ? JSON.parse(localStorage.getItem("previousGame")!) : []);
     const [changeDisplay, setChangeDisplay] = useState<boolean>(true);
 
     const { savePreviousGame } = HistoryListFunctions({
         answerArray,
         setAnswerArray,
         setPreviousGame
-    })
+    });
 
     useEffect(() => {
         savePreviousGame();
@@ -27,12 +27,18 @@ export const HistoryList = ({ answerArray, start, setAnswerArray }: HistoryListP
 
     return <div className={styles.historyList}>
         <div className={styles.buttonContainers}>
-            <button onClick={() => setChangeDisplay(true)}>
+            <button
+                className={changeDisplay ? styles.buttonClicked : styles.button}
+                onClick={() => setChangeDisplay(true)}
+            >
                 <h2>
                     Current Game
                 </h2>
             </button>
-            <button onClick={() => setChangeDisplay(false)}>
+            <button
+                className={!changeDisplay ? styles.buttonClicked : styles.button}
+                onClick={() => setChangeDisplay(false)}
+            >
                 <h2>
                     Previous Game
                 </h2>

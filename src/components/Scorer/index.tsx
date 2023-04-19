@@ -24,10 +24,10 @@ export const Scorer = ({ currentScore, start, setCurrentScore }: ScorerProps) =>
     }, [start])
 
     return <div className={styles.scoreContainer}>
-        <p>
+        <p data-testid='high-score'>
             High score: {highScore}
         </p>
-        <p>
+        <p data-testid='current-score'>
             Current score: {currentScore}
         </p>
     </div>

@@ -28,6 +28,7 @@ export const HistoryList = ({ answerArray, start, setAnswerArray }: HistoryListP
     return <div className={styles.historyList}>
         <div className={styles.buttonContainers}>
             <button
+                data-testid="current-game"
                 className={changeDisplay ? styles.buttonClicked : styles.button}
                 onClick={() => setChangeDisplay(true)}
             >
@@ -36,6 +37,7 @@ export const HistoryList = ({ answerArray, start, setAnswerArray }: HistoryListP
                 </h2>
             </button>
             <button
+                data-testid="previous-game"
                 className={!changeDisplay ? styles.buttonClicked : styles.button}
                 onClick={() => setChangeDisplay(false)}
             >

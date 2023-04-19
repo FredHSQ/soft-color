@@ -1,4 +1,4 @@
-import { render, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import { ProgressBar } from './index';
 
@@ -17,9 +17,9 @@ describe('Renders ProgressBar', () => {
 
     test('Should render Progressbar with width of (totaltime-1)*10', () => {
         let totalTime = 10
-        const { getByTestId } = render(<ProgressBar start={false} currentScore={0} setCurrentScore={setCurrentScore} totalTime={totalTime} setTotalTime={setTotalTime} />);
-        const progressbarContainer = getByTestId('progressbar-container');
-        const progressbar = getByTestId('progressbar');
+        render(<ProgressBar start={false} currentScore={0} setCurrentScore={setCurrentScore} totalTime={totalTime} setTotalTime={setTotalTime} />);
+        const progressbarContainer = screen.getByTestId('progressbar-container');
+        const progressbar = screen.getByTestId('progressbar');
 
         expect(progressbarContainer).toBeInTheDocument();
         expect(progressbar).toBeInTheDocument();

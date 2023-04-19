@@ -10,7 +10,7 @@ interface AnswerProps {
 export const Answer = ({ answer }: AnswerProps) => {
     
     return answer.rightAnswer !== answer.yourAnswer ?
-        <div className={styles.history}>
+        <div data-testid="answer-array" className={styles.history}>
             <div data-testid="answer-card" className={styles.card} style={{backgroundColor: answer.yourAnswer}}>
                 <p>
                     {answer.yourAnswer}
@@ -27,7 +27,7 @@ export const Answer = ({ answer }: AnswerProps) => {
             </h2>
         </div>
         :
-        <div className={styles.history}>
+        <div data-testid="answer-array" className={styles.history}>
             <div data-testid="answer-card" className={styles.cardRight} style={{backgroundColor: answer.yourAnswer}}>
                 <p data-testid='rightAnswer'>
                     {answer.yourAnswer}

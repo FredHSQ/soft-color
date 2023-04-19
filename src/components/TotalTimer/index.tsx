@@ -25,7 +25,7 @@ export const TotalTimer = ({ start, setStart }: TotalTimerProps) => {
     }, [totalTime, start]);
 
     return <div className={styles.totalTimerContainer}>
-        <h1>
+        <h1 data-testid='total-time'>
             {totalTime}
         </h1>
     </div>

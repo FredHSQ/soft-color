@@ -8,7 +8,7 @@ interface StarterProps {
 export const Starter = ({setStart, start}:StarterProps) => {
 
     return <button onClick={() => { setStart(!start) }} className={styles.starterContainer}>
-        <h1>
+        <h1 data-testid="title-start">
             {start ? "Restart" : "Start"}
         </h1>
     </button>

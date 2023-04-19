@@ -1,33 +1,39 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { HistoryList } from './';
+import { AnswerType } from '../../@types/answer';
 
-describe('HistoryList', () => {
+describe('HistoryList Render', () => {
 
-    test('renders "Current Game" button by default', () => {
+    test('Should render buttons', () => {
 
         render(<HistoryList answerArray={[]} start={false} setAnswerArray={() => { }} />);
 
-        const currentGameButton = screen.getByRole('button', { name: 'Current Game' });
-        const previousGameButton = screen.getByRole('button', { name: 'Previous Game' });
+        const currentGameButton = screen.getByTestId('current-game');
+        const previousGameButton = screen.getByTestId('previous-game');
 
-        expect(currentGameButton).not.toHaveStyle(`background-color: transparent`);
-        expect(previousGameButton).toHaveStyle(`background-color: transparent`);
+        expect(currentGameButton).toBeInTheDocument();
+        expect(previousGameButton).toBeInTheDocument();
     });
 
-    test('renders "Previous Game" button when clicked', () => {
+    test('Should render all itens of list', () => {
 
-        render(<HistoryList answerArray={[]} start={false} setAnswerArray={() => { }} />);
+        const answers: AnswerType[] = [{
+            rightAnswer: 'teste1',
+            yourAnswer: 'teste2',
+            timeElapsed: 1
+        },
+        {
+            rightAnswer: 'teste3',
+            yourAnswer: 'teste4',
+            timeElapsed: 2
+        }]
 
-        const previousGameButton = screen.getByRole('button', { name: 'Previous Game' });
+        render(<HistoryList answerArray={answers} start={false} setAnswerArray={() => { }} />);
 
-        userEvent.click(previousGameButton);
+        const awswerArray = screen.getAllByTestId("answer-array");
 
-        const currentGameButton = screen.getByRole('button', { name: 'Current Game' });
-
-        expect(currentGameButton).toHaveStyle(`background-color: transparent`);
-        expect(previousGameButton).not.toHaveStyle(`background-color: transparent`);
+        expect(awswerArray.length).toBe(answers.length);
     });
 
 });

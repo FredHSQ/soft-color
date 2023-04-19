@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AnswerType } from '../../@types/answer';
+import { AnswerType } from '../../@Types/answer';
 import styles from './styles.module.css';
 import { HistoryListFunctions } from './functions';
 import { Answer } from './Answer';

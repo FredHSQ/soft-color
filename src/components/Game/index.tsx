@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from './styles.module.css';
 import { GameFunctions } from "./functions";
 import { ProgressBar } from "./ProgressBar";
-import { AnswerType } from "../../@types/answer";
+import { AnswerType } from "../../@Types/answer";
 
 interface GameProps {
     start: boolean;

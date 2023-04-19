@@ -4,7 +4,7 @@ import { TotalTimer } from '../../components/TotalTimer';
 import { Scorer } from '../../components/Scorer';
 import { Starter } from '../../components/Starter';
 import { Game } from '../../components/Game';
-import { AnswerType } from '../../@types/answer';
+import { AnswerType } from '../../@Types/answer';
 import { HistoryList } from '../../components/HistoryList';
 import { DataReseter } from '../../components/DataReseter';
 

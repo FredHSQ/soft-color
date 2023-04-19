@@ -1,4 +1,4 @@
-import { AnswerType } from "../../@types/answer";
+import { AnswerType } from "../../@Types/answer";
 
 interface GameFunctionsProps {
     setRightColor: React.Dispatch<React.SetStateAction<string>>;

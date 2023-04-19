@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { HistoryList } from './';
-import { AnswerType } from '../../@types/answer';
+import { AnswerType } from '../../@Types/answer';
 
 describe('HistoryList Render', () => {
 

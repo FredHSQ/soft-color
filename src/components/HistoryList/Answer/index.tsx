@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { AnswerType } from '../../../@types/answer';
+import { AnswerType } from '../../../@Types/answer';
 import right from '../../../assets/right.svg';
 import wrong from '../../../assets/wrong.svg';
 

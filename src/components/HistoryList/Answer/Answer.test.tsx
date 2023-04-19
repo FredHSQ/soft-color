@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Answer } from '.';
 import '@testing-library/jest-dom';
-import { AnswerType } from '../../../@types/answer';
+import { AnswerType } from '../../../@Types/answer';
 
 describe('Renders Answer', () => {
 

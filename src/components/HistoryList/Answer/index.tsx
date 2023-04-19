@@ -11,30 +11,30 @@ export const Answer = ({ answer }: AnswerProps) => {
     
     return answer.rightAnswer !== answer.yourAnswer ?
         <div className={styles.history}>
-            <div className={styles.card}>
+            <div data-testid="answer-card" className={styles.card} style={{backgroundColor: answer.yourAnswer}}>
                 <p>
                     {answer.yourAnswer}
                 </p>
             </div>
-            <div className={styles.card}>
+            <div data-testid="answer-card"  className={styles.card} style={{backgroundColor: answer.rightAnswer}}>
                 <p>
                     {answer.rightAnswer}
                 </p>
             </div>
             <img className={styles.icon} src={wrong}/>
-            <h2>
+            <h2 data-testid="time">
                 {answer.timeElapsed}s
             </h2>
         </div>
         :
         <div className={styles.history}>
-            <div className={styles.cardRight}>
-                <p>
+            <div data-testid="answer-card" className={styles.cardRight} style={{backgroundColor: answer.yourAnswer}}>
+                <p data-testid='rightAnswer'>
                     {answer.yourAnswer}
                 </p>
             </div>
             <img className={styles.icon} src={right}/>
-            <h2>
+            <h2 data-testid="time">
                 {answer.timeElapsed}s
             </h2>
         </div>

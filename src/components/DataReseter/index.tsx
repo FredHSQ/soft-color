@@ -7,6 +7,6 @@ export const DataReseter = () => {
     const { resetData } = DataReseterFunctions()
 
     return <button onClick={resetData} className={styles.resetData}>
-        Reset All data
+        Reset All Data
     </button>
 }

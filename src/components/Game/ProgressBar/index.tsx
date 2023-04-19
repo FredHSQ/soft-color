@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from './styles.module.css'
 import { ProgressBarFunctions } from "./functions";
 
@@ -27,7 +27,7 @@ export const ProgressBar = ({ start, setCurrentScore, currentScore, setTotalTime
         restartProgressBar(true);
     }, [currentScore]);
 
-    return <div className={styles.progressbarContainer}>
-        <div className={styles.progressbar} style={{ width: `${(totalTime - 1) * 10}%` }} />
+    return <div data-testid="progressbar-container" className={styles.progressbarContainer}>
+        <div data-testid="progressbar" className={styles.progressbar} style={{ width: `${(totalTime - 1) * 10}%` }} />
     </div>
 }

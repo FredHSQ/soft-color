@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from './styles.module.css';
 import { GameFunctions } from "./functions";
-import { ProgressBar } from "../ProgressBar";
+import { ProgressBar } from "./ProgressBar";
 import { AnswerType } from "../../@types/answer";
 
 interface GameProps {
@@ -39,9 +39,9 @@ export const Game = ({ currentScore, start, setCurrentScore, setAnswerArray }: G
             setCurrentScore={setCurrentScore}
         />
         <div className={styles.currentColor} style={{ backgroundColor: rightColor }} />
-        <div className={styles.options}>
-            {colorArray.map(color => {
-                return <button onClick={() => verifyAnswer(color)} className={styles.card}>
+        <div data-testid="color-options" className={styles.options}>
+            {colorArray.map((color,index) => {
+                return <button data-testid="color-option" onClick={() => verifyAnswer(color)} className={styles.card}>
                     <p>
                         {color}
                     </p>

@@ -7,7 +7,7 @@
     <img src="https://riotfest.org/wp-content/uploads/2019/10/hex-girls_WEB-1024x576.jpg" alt="Hex girls" width="120" height="80">
   </a>
 
-<h3 align="center">Ant Racing APP</h3>
+<h3 align="center">Hex Color Guessing Game</h3>
 
   <p align="center">
     Project of a React app in TypeScript, a game where you have to guess the right hex-color that represents the color shown.
